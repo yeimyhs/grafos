@@ -3,6 +3,7 @@ package grafos;
 public class Vertex<E> {//vertice
 	protected E data; //data generica
 	protected ListaAdyacencia<Edge<E>> listAdj;//creacion lista de aristas
+	protected int label ; // estados:0 no explorado , 1 = visitado
 	
 	public Vertex(E data) {//constructor del vertice 
 		this.data = data;
