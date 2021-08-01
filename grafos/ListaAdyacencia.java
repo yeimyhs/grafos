@@ -26,7 +26,6 @@ public class ListaAdyacencia<T> {
 
 	public T search(T data) {
 		Node<T> aux = this.head;
-		System.out.println(aux.toString());
 		while(aux != null && !aux.data.equals(data)) {
 			aux = aux.next;
 		}
