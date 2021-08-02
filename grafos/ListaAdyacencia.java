@@ -35,6 +35,19 @@ public class ListaAdyacencia<T> {
 			return null;
 		}
 	}
+	public int get(T data) {
+		Node<T> aux = this.head;
+		int pos = 0;
+		while(aux != null && !aux.data.equals(data)) {
+			pos++;
+			aux = aux.next;
+		}
+		if(aux != null) {
+			return pos;
+		} else {
+			return -1;
+		}
+	}
 	
 	@Override
 	public String toString() {
