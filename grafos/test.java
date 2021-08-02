@@ -30,6 +30,9 @@ public class test {
 		la.DFS("5");
 		
 		
+		System.out.println("\n Busqueda en anchura");
+		la.BFS("0");
+		
 		
 		
 	}
