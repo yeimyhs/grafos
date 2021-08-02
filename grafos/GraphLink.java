@@ -37,4 +37,41 @@ public class GraphLink<E> {//
 		return this.listVertex.toString();
 		
 	}
+	public void initLabel() {//inicializar
+		Node<Vertex<E>> aux = this.listVertex.head;//vertices
+		for (; aux != null ; aux=aux.next) {//mientras que sea diferente de nulo se inicializa el vertice
+			aux.data.label = 0;
+			Node<Edge<E>> auxE = aux.data.listAdj.head;//las aristas de ese vertice ,recorrer
+			for (; auxE != null ; auxE=auxE.next) {
+				auxE.data.label = 0;
+			}
+		}
+	}
+	public void DFS(E data) {
+		Vertex<E> nuevo = new Vertex<E>(data);
+		Vertex<E> aux = this.listVertex.search(nuevo);//vertice
+		if(aux == null) {
+			System.out.println("Vertice no existe ...");
+			return;
+		}
+		initLabel();
+		DFSRec(aux);
+	}
+
+	private void DFSRec(Vertex<E> v) {
+		v.label = 1;
+		System.out.println(v.data+", ");
+		Node<Edge<E>> e = v.listAdj.head;
+		for (; e != null; e=e.next) {
+			if(e.data.label == 0) {
+				Vertex<E> w =e.data.refDest;
+				if (w.label ==0) {
+					e.data.label = 1;
+					DFSRec(w);
+				}else
+					e.data.label = 2;
+			}
+		}
+		
+	}
 }
