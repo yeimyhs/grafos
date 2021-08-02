@@ -5,26 +5,29 @@ public class test {
 		//implementacion de lista de adyacencia
 		
 		GraphLink<String> la = new GraphLink<>();
-		la.insertVertex("lima");
-		la.insertVertex("aqp");
-		la.insertVertex("cusco");
-		la.insertVertex("piura");
-		la.insertVertex("tarapoto");
+		la.insertVertex("0");
+		la.insertVertex("1");
+		la.insertVertex("2");
+		la.insertVertex("3");
+		la.insertVertex("4");
+		la.insertVertex("5");
 		
-		la.insertEdge("lima", "aqp");
-		la.insertEdge("cusco", "aqp");
-		la.insertEdge("piura", "lima");
-		la.insertEdge("cusco", "lima");
-		la.insertEdge("piura", "tarapoto");
-		//la.insertEdge("lima", "aqp");
+		la.insertEdge("1", "3");
+		la.insertEdge("2", "4");
+		la.insertEdge("5", "1");
+		la.insertEdge("3", "0");
+		la.insertEdge("3", "1");
+		la.insertEdge("2", "4");
+		la.insertEdge("5", "4");
+		la.insertEdge("0", "4");
 		
 		System.out.println("Grafo ciudades :\n"+ la);
 		
 		
 		//implementacion de DFS
-		la.DFS("cusco");
+		la.DFS("0");
 		System.out.println();
-		la.DFS("lima");
+		la.DFS("5");
 		
 		
 		
