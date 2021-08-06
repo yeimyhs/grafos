@@ -63,7 +63,7 @@ public class GraphLink<T> {//
 
 	private void DFSRec(Vertex<T> v) {
 		v.label = 1;
-		System.out.println(v.data+"-"+v.label+", ");
+		System.out.println(v.data+", ");
 		Node<Edge<T>> e = v.listAdj.head;
 		for (; e != null; e=e.next) {
 			if(e.data.label == 0) {
@@ -90,60 +90,60 @@ public class GraphLink<T> {//
 	}
 
 	private void BFSRec(Vertex<T> v) {
-		//		System.out.println(v);
-		//		Node<Edge<T>> e = v.listAdj.head;
-		//		boolean explored [] =new boolean [length()];
-		//		explored[pos(v.data)] = true;
-		//		ArrayList<T> vertexes = new ArrayList<T>();
-		//		vertexes.add(v.data);
-		//		//Vertex<T> aux = new Vertex<T>(null);
-		//		
-		//		
-		//		Vertex<T> nuevo = new Vertex<T>(null);
-		//		Vertex<T> aux = new Vertex<T>(null);//vertice
-		//		for (; e != null; e=e.next) {
-		//			System.out.println(e.data);
-		//			vertexes.add((T) e.data);
-		//			nuevo.data= (T) e.data;
-		//			aux = this.listVertex.search(nuevo);
-		//			explored[pos(aux.data)] = true;
-		//			System.out.println("x---"+e.data);
-		//		}
+				System.out.println(v);
+				Node<Edge<T>> e = v.listAdj.head;
+				boolean explored [] =new boolean [length()];
+				explored[pos(v.data)] = true;
+				ArrayList<T> vertexes = new ArrayList<T>();
+				vertexes.add(v.data);
+				//Vertex<T> aux = new Vertex<T>(null);
+				
+				
+				Vertex<T> nuevo = new Vertex<T>(null);
+				Vertex<T> aux = new Vertex<T>(null);//vertice
+				for (; e != null; e=e.next) {
+					System.out.println(e.data);
+					vertexes.add((T) e.data);
+					nuevo.data= (T) e.data;
+					aux = this.listVertex.search(nuevo);
+					explored[pos(aux.data)] = true;
+					System.out.println("x---"+e.data);
+				}
 
 		v.label = 1;
-		
+
 		Node<Edge<T>> e = v.listAdj.head;
 		//while(e.next != null) {
-	//	if(v.label ==1)
-//System.out.println(v.data+", "+v.label);
-			for (; e != null; e=e.next) {
+		//	if(v.label ==1)
+		//System.out.println(v.data+", "+v.label);
+		for (; e != null; e=e.next) {
 			System.out.println(e+"_"+ e.data.label +" data");
 			//while(e.data.refDest != null)
 			BFS( v.data);
 			if(e.data.label == 0) {
 				Vertex<T> w =e.data.refDest;
 				if (w.label ==0) {
-					
+
 					e.data.label = 1;
-					
+
 					w.label = 1;
 					System.out.println(e.next.data);
-					
+
 					//System.out.println(e.data.refDest + "ref");
 					//BFSRec(e.next.data.refDest);
-					
-					
+
+
 				}else {
 					e.data.label = 2;
-					
+
 				}
-				
+
 			}
 			//}
 			e = e.next;
-			
-			
-			
+
+
+
 		}
 	}
 	public int length() {

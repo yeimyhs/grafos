@@ -5,33 +5,40 @@ public class test {
 		//implementacion de lista de adyacencia
 		
 		GraphLink<String> la = new GraphLink<>();
-		la.insertVertex("0");
-		la.insertVertex("1");
-		la.insertVertex("2");
-		la.insertVertex("3");
-		la.insertVertex("4");
-		la.insertVertex("5");
+		la.insertVertex("words");
+		la.insertVertex("cords");
+		la.insertVertex("corps");
+		la.insertVertex("coops");
+		la.insertVertex("crops");
+		la.insertVertex("drops");
+		la.insertVertex("drips");
+		la.insertVertex("grips");
+		la.insertVertex("gripe");
+		la.insertVertex("graph");
 		
-		la.insertEdge("1", "3");
-		la.insertEdge("2", "4");
-		la.insertEdge("5", "1");
-		la.insertEdge("3", "0");
-		la.insertEdge("3", "1");
-		la.insertEdge("2", "4");
-		la.insertEdge("5", "4");
-		la.insertEdge("0", "4");
 		
-		System.out.println("Grafo ciudades :\n"+ la);
+		
+		la.insertEdge("words", "cords");;
+		la.insertEdge("cords", "corps");
+		la.insertEdge("corps", "coops");
+		la.insertEdge("coops", "crops");
+		la.insertEdge("crops", "drops");
+		la.insertEdge("drops", "drips");
+		la.insertEdge("drips", "grips");
+		la.insertEdge("grips", "gripe");
+		la.insertEdge("gripe", "graph");
+		
+		System.out.println("Grafo palabras :\n"+ la);
 		
 		
 		//implementacion de DFS
-		la.DFS("0");
+		la.DFS("words");
 		System.out.println();
 		la.DFS("5");
 		
 		
 		System.out.println("\n Busqueda en anchura");
-		la.BFS("0");
+		//la.BFS("0");
 		
 		
 		
